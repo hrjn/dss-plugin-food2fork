@@ -3,7 +3,7 @@
         "label" : "What should I cook today ?",
         "description" : "Feeling uninspired about what to cook for lunch/dinner? Worry no more!",
         "icon" : "icon-food",
-        "iconColor": "sky"
+        "iconColor": "grey"
     },
 
     "kind" : "PYTHON",
