@@ -55,6 +55,7 @@ output_for_df = {"id": [], "title": [], "ingredients": []}
 for output in final_outputs:
     req_ing = requests.post(get_endpoint, data={"key": api_key, "rId": output["id"]})
     resp = json.loads(req_ing.text)
+    print(resp)
     output["ingredients"] = resp["recipe"]["ingredients"]
     writer.write_row_dict(output)
     # output_for_df["id"].append(resp["recipe"]["recipe_id"])
