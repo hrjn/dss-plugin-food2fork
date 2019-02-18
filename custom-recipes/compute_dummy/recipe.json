@@ -1,4 +1,3 @@
-// This file is the descriptor for the Custom code recipe compute_dummy
 {
     "meta" : {
         "label" : "What should I cook today ?",
