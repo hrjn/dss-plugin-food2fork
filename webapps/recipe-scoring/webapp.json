@@ -6,8 +6,8 @@
         "icon": "icon-asterisk"
     },
 
-    "baseType": "STANDARD", // WARNING: once set, do not change
-    "hasBackend": "false",
+    "baseType": "STANDARD", 
+    "hasBackend": "true",
     "standardWebAppLibraries": ["jquery","dataiku"],
 
     /* The field "params" holds a list of all the params
