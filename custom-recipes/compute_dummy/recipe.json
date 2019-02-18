@@ -24,7 +24,8 @@
             "name": "nb_max_search",
             "label" : "How many recipes to retrieve ?",
             "type": "INT",
-            "mandatory" : true
+            "mandatory" : true,
+            "default": 3
         },
         /* Uncomment me if you want to add sorting :) 
         {
