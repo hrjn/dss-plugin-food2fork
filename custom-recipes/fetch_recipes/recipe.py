@@ -8,8 +8,17 @@ from dataiku.customrecipe import *
 
 BASE_URL = "https://www.food2fork.com/api/"
 
+
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s")
 logging.getLogger().setLevel(logging.INFO)
+
+logging.info("Preparing output dataset...")
+output_dataset_name = get_output_names_for_role("output_role")
+output_dataset = dataiku.Dataset(output_dataset_name)
+output_schema = [{"name": "id", "type": "string"},
+                 {"name": "title", "type": "string"},
+                 {"name": "ingredients", "type": "string"}]
+output_dataset.write_schema(output_schema)
 
 logging.info("Fetching parameters...")
 recipe_config = get_recipe_config()
@@ -39,13 +48,7 @@ get_endpoint = BASE_URL + "get"
 final_outputs = [{"id": rcp["recipe_id"],
                   "title": rcp["title"]} for rcp in search_output["recipes"]]
 
-logging.info("Preparing output dataset...")
-output_dataset_name = get_output_names_for_role("output_role")
-output_dataset = dataiku.Dataset(output_dataset_name)
-output_schema = [{"name": "id", "type": "string"},
-                 {"name": "title", "type": "string"},
-                 {"name": "ingredients", "type": "string"}]
-output_dataset.write_schema(output_schema)
+
 
 logging.info("Writing results in output dataset...")
 writer = output_dataset.get_writer()
