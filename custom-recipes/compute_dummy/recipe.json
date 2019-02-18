@@ -1,8 +1,8 @@
 // This file is the descriptor for the Custom code recipe compute_dummy
 {
     "meta" : {
-        "label" : "Custom recipe from recipe compute_dummy",
-        "description" : "Custom recipe",
+        "label" : "What should I cook today ?",
+        "description" : "Feeling uninspired about what to cook for lunch/dinner? Worry no more!",
         "icon" : "icon-food"
     },
 
