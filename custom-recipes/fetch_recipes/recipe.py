@@ -3,6 +3,7 @@ import dataiku
 import logging
 import requests
 import json
+import pandas as pd
 
 from dataiku.customrecipe import *
 
@@ -15,10 +16,10 @@ logging.getLogger().setLevel(logging.INFO)
 logging.info("Preparing output dataset...")
 output_dataset_name = get_output_names_for_role("output_role")[0]
 output_dataset = dataiku.Dataset(output_dataset_name)
-output_schema = [{"name": "id", "type": "string"},
-                 {"name": "title", "type": "string"},
-                 {"name": "ingredients", "type": "string"}]
-output_dataset.write_schema(output_schema)
+# output_schema = [{"name": "id", "type": "string"},
+#                  {"name": "title", "type": "string"},
+#                  {"name": "ingredients", "type": "string"}]
+# output_dataset.write_schema(output_schema)
 
 logging.info("Fetching parameters...")
 recipe_config = get_recipe_config()
@@ -50,9 +51,15 @@ final_outputs = [{"id": rcp["recipe_id"],
 
 logging.info("Writing results in output dataset...")
 writer = output_dataset.get_writer()
+output_for_df = {"id": [], "title": [], "ingredients": []}
 for output in final_outputs:
     req_ing = requests.post(get_endpoint, data={"key": api_key, "rId": output["id"]})
     resp = json.loads(req_ing.text)
-    output["ingredients"] = resp["recipe"]["ingredients"]
-    writer.write_row_dict(output)
+    # output["ingredients"] = resp["recipe"]["ingredients"]
+    # writer.write_row_dict(output)
+    output_for_df["id"].append(resp["recipe"]["recipe_id"])
+    output_for_df["title"].append(resp["recipe"]["title"])
+    output_for_df["ingredients"].append(resp["recipe"]["ingredients"])
+    df_output = pd.DataFrame.from_dict(output_for_df)
+    writer.write_df(df_output)
 writer.close()
