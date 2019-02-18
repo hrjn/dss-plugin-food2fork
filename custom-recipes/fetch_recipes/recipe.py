@@ -13,7 +13,7 @@ logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s")
 logging.getLogger().setLevel(logging.INFO)
 
 logging.info("Preparing output dataset...")
-output_dataset_name = get_output_names_for_role("output_role")
+output_dataset_name = get_output_names_for_role("output_role")[0]
 output_dataset = dataiku.Dataset(output_dataset_name)
 output_schema = [{"name": "id", "type": "string"},
                  {"name": "title", "type": "string"},
