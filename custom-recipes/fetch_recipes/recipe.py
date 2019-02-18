@@ -10,6 +10,8 @@ from foobar import dummy
 
 BASE_URL = "https://www.food2fork.com/api/"
 wtf = dummy()
+if wtf == 42:
+    raise Exception("It worked")
 
 
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s")
