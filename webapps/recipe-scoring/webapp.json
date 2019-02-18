@@ -1,9 +1,9 @@
 // This file is the descriptor for webapp recipe-scoring
 {
     "meta": {
-        "label": "recipe-scoring",
-        "description": "Custom webapp created from: dummy_scoring(37337CODERS.31SqEEk)",
-        "icon": "icon-puzzle-piece"
+        "label": "Recipe2Cuisine",
+        "description": "Get the most probable origin out of a recipe",
+        "icon": "icon-asterisk"
     },
 
     "baseType": "STANDARD", // WARNING: once set, do not change
