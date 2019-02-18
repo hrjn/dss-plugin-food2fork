@@ -13,13 +13,13 @@
     // Meta data for display purposes
     "meta" : {
         // Name of this plugin that appears in the interface.
-        "label" : "Plugin food2fork",
+        "label" : "Recipe fetcher plugin",
 
-        "description" : "A longer string explaining what the plugin does",
-        "author" : "harizo",
+        "description" : "Use the food2fork API to retrieve cooking recipes",
+        "author" : "Dataiku (Harizo Rajaona)",
 
         // The icon of a plugin must be one of the FontAwesome 3.1 icons
-        "icon" : "icon-puzzle-piece",
+        "icon" : "icon-glass",
 
         "licenseInfo" : "Apache Software License",
 
