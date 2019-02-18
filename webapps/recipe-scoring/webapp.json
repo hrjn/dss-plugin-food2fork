@@ -24,7 +24,8 @@
             "name": "input_model",
             "type": "MODEL",
             "label": "Model",
-            "description": "The model to be used for scoring"
+            "description": "The model to be used for scoring",
+            "mandatory": true
         }
     ],
 
