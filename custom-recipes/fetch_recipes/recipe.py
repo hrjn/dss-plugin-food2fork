@@ -43,6 +43,8 @@ search_endpoint = BASE_URL + "search"
 params = {"key": api_key, "q": meal_type, "count": nb_max_search}
 req_search = requests.post(search_endpoint, data=params)
 search_output = json.loads(req_search.text)
+if search_output["error"] == "limit":
+    raise Exception("API limit quota reached, try later :(")
 
 logging.info("Processing and forwarding to the GET endpoint...")
 get_endpoint = BASE_URL + "get"
