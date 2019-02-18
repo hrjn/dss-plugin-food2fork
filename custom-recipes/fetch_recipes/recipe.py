@@ -25,7 +25,7 @@ for secret in auth_info["secrets"]:
     if secret["key"] == "food2fork":
         api_key = secret["value"]
         break
-if not secret_value:
+if not api_key:
     raise Exception("Secret not found!")
 
 logging.info("Querying the SEARCH endpoint...")
