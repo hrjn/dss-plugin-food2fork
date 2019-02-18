@@ -48,8 +48,6 @@ get_endpoint = BASE_URL + "get"
 final_outputs = [{"id": rcp["recipe_id"],
                   "title": rcp["title"]} for rcp in search_output["recipes"]]
 
-
-
 logging.info("Writing results in output dataset...")
 writer = output_dataset.get_writer()
 for output in final_outputs:
