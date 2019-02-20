@@ -1,0 +1,47 @@
+{
+    "meta" : {
+        "label" : "What should I cook today ?",
+        "description" : "Feeling uninspired about what to cook for lunch/dinner? Worry no more!",
+        "icon" : "icon-food",
+        "iconColor": "sky"
+    },
+
+    "kind" : "PYTHON",
+
+    "outputRoles" : [
+        {
+            "name": "output_role",
+            "label": "Output dataset",
+            "description": "Your recipes go here",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+    ],
+
+    "params": [
+        {
+            "name": "nb_max_search",
+            "label" : "How many recipes to retrieve ?",
+            "type": "INT",
+            "mandatory" : true,
+            "default": 3
+        },
+        /* Uncomment me if you want to add sorting :) 
+        {
+            "name": "is_sorted_by_popularity",
+            "label": "Sort by populatiry?",
+            "type": "BOOLEAN",
+            "default": false
+        },
+        */
+        {
+            "name": "meal_type",
+            "type": "STRING",
+            "label": "What kind of meal ?",
+            "mandatory": true
+        }
+    ],
+    "resourceKeys" : []
+
+}
