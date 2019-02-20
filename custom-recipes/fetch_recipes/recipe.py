@@ -9,8 +9,6 @@ from dataiku.customrecipe import *
 
 BASE_URL = "https://www.food2fork.com/api/"
 
-
-
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s")
 logging.getLogger().setLevel(logging.INFO)
 
