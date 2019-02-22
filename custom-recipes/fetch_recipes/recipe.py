@@ -7,6 +7,7 @@ import pandas as pd
 
 from dataiku.customrecipe import *
 
+# The base URL:
 BASE_URL = "https://www.food2fork.com/api/"
 
 logging.basicConfig(format="%(asctime)s [%(levelname)s] %(message)s")
